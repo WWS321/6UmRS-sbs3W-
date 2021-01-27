@@ -8,7 +8,7 @@ boxjs链接  https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/ziye.
 转载请备注个名字，谢谢
 ⚠️笑谱
 脚本运行一次   
-则运行6次视频 1次金蛋 或者 6次直播（直播默认关闭，且在视频金币达到上限后有效）
+则运行6次视频 1次金蛋 1次直播（直播默认关闭，且在8点到23点有效）
 
 
 
@@ -18,6 +18,7 @@ boxjs链接  https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/ziye.
 1.27 笑谱恢复，活动id284
 1.27-2 增加看直播功能，默认关闭，设置LIVE来开启  如 设置LIVE 为 60 则开启直播，并且次数达到60次停止
 1.27-3 调整直播运行次数，运行一次脚本，执行6次直播
+1.27-4 调整策略，6次视频1次金蛋1次直播
 
 
 ⚠️一共1个位置 1个ck  👉 2条 Secrets 
@@ -63,7 +64,7 @@ const notifyInterval = 2;// 0为关闭通知，1为所有通知，2为12 23 点�
 const CS=6
 
 $.message = '', COOKIES_SPLIT = '', CASH = '', LIVE = '';
-let ins=0
+let ins=0,livecs=0;
 const iboxpayheaderArr = [];
 let iboxpayheaderVal = ``;
 let middleiboxpayHEADER = [];
@@ -216,14 +217,15 @@ let cookie_is_live = await user(i + 1);//用户名
 	  await play();//播放
 	  let video_is_live = await video(i + 1);//视频
     if (!video_is_live) {
-	  await sylist();//收益列表
-		if (LIVE >=1 && livecs<LIVE && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23) {
-	  await lives();//看直播		
-		}
    continue;
- } 
+ }
       await goldvideo();//金蛋视频
-	  
+if (LIVE >=1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23) {
+	  await sylist();//收益列表
+if ($.sylist.resultCode && livecs<LIVE) {
+	  await lives();//看直播
+           }		
+		}	  
 	  	  
      }
       
@@ -486,13 +488,9 @@ $.message +=
   })
 }
 //直播
-function lives(timeout = 0) {
+function lives(timeout = 30000) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-for (let i = 0; i < CS; i++) {
-$.index = i+1		
-        setTimeout(() => {
-
 if ($.isNode()) {
 	tts = Math.round(new Date().getTime() +
 new Date().getTimezoneOffset() * 60 * 1000 ).toString();
@@ -515,10 +513,8 @@ header=iboxpayheaderVal.replace(`${oldtime}`, `${tts}`)
           if (logs) $.log(`${O}, 直播🚩: ${data}`);
           $.lives = JSON.parse(data);
 	if ($.lives.resultCode==1){	
-      console.log(`开始领取第${i+1}次直播奖励，获得${$.lives.data.goldCoinAmt}金币\n`);
-	  ins +=$.lives.data.goldCoinAmt;
-	  await $.wait($.index*30000-29000);	  
-  $.message +=`【直播奖励】：共领取${$.index}次直播奖励，共${ins}金币\n`
+      console.log(`直播奖励，获得${$.lives.data.goldCoinAmt}金币\n`);	 	  
+  $.message +=`【直播奖励】：获得${$.lives.data.goldCoinAmt}金币\n`
 	   }    
        if ($.lives.resultCode==0){	
 console.log($.lives.errorDesc+'\n');
@@ -530,8 +526,6 @@ $.message +='【直播奖励】：'+$.lives.errorDesc+'\n';
           resolve()
         }
       })
-	  }, i * 30000);
-      }
     },timeout)
   })
 }
@@ -545,7 +539,7 @@ new Date().getTimezoneOffset() * 60 * 1000 ).toString();
 }else tts = Math.round(new Date().getTime() +
 new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toString();		
       let url = {
-        url: `https://veishop.iboxpay.com/nf_gateway/nf_customer_activity/day_cash/v1/list_gold_coin.json?source=WX_APP_KA_HTZP&date=&actTypeId=0&size=60`,
+        url: `https://veishop.iboxpay.com/nf_gateway/nf_customer_activity/day_cash/v1/list_gold_coin.json?source=WX_APP_KA_HTZP&date=&actTypeId=0&size=1000`,
         headers: JSON.parse(header),
       }
       $.get(url, async(err, resp, data) => {
@@ -558,7 +552,7 @@ livecs = live.length;
       console.log('已获得直播奖励 '+livecs+' 次，共'+livecs*500+'金币\n')
 	  $.message +=  
   '【直播收益】：已获得直播奖励 '+livecs+' 次，共'+livecs*500+'金币\n'
-	   }    
+	   }else livecs = 0    
        if ($.sylist.resultCode==0){	
 console.log($.sylist.errorDesc+'\n');
 $.message +=  
