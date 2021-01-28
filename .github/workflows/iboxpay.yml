@@ -25,7 +25,7 @@ jobs:
       - name: npm install
         if: env.XP_iboxpayHEADER
         run: |
-          npm install --save got
+          npm install --save got tough-cookie
       - name: '运行 【XIXI】'
         if: env.XP_iboxpayHEADER
         run: |
