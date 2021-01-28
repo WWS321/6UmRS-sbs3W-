@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 笑谱
+name: XIXI
 
 on:
   workflow_dispatch:
@@ -17,9 +17,7 @@ jobs:
         XP_iboxpayHEADER: ${{ secrets.XP_iboxpayHEADER }}
         XP_CASH: ${{ secrets.XP_CASH }}
     steps:
-      - name: Checkout
-        run: |
-          git clone https://github.com/ziye12/JavaScript.git ~/JavaScript
+      - uses: actions/checkout@v1
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -27,13 +25,11 @@ jobs:
       - name: npm install
         if: env.XP_iboxpayHEADER
         run: |
-          cd ~/JavaScript
           npm install
-      - name: '运行 【笑谱】'
+      - name: '运行 【XIXI】'
         if: env.XP_iboxpayHEADER
         run: |
-          cd ~/JavaScript
-          node Task/iboxpay.js
+          node Task/XPZB.js
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
