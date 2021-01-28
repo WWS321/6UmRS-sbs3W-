@@ -16,6 +16,7 @@ jobs:
     env:
         XP_iboxpayHEADER: ${{ secrets.XP_iboxpayHEADER }}
         XP_CASH: ${{ secrets.XP_CASH }}
+        XP_live: ${{ secrets.XP_live }} 
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 12.x
