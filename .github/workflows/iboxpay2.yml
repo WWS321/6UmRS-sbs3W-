@@ -14,6 +14,7 @@ jobs:
         XP_iboxpayHEADER: ${{ secrets.XP_iboxpayHEADER2 }}
         XP_CASH: ${{ secrets.XP_CASH }}
         XP_live: ${{ secrets.XP_live }} 
+        XP_refreshTOKEN: ${{ secrets.XP_REFRESHTOKEN2 }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 12.x
