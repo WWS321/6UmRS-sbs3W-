@@ -1,0 +1,42 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: BA2k^PVzflw2
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '0 4,15 * * *'
+ # watch:
+ #   types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        FL_flwURL: ${{ secrets.FL_flwURL2 }}
+        FL_flwHEADER: ${{ secrets.FL_flwHEADER2 }}		
+        FL_flwspBODY: ${{ secrets.FL_flwspBODY2 }}	
+        FL_flwqwBODY: ${{ secrets.FL_flwqwBODY2 }}        
+        FL_CASH: ${{ secrets.FL_CASH }}
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/ziye12/JavaScript.git ~/JavaScript
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        if: env.FL_flwURL
+        run: |
+          cd ~/JavaScript
+          npm install
+      - name: '运行 【BA2k^PVzflw2】'
+        if: env.FL_flwURL
+        run: |
+          cd ~/JavaScript
+          node Task/flw.js
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
