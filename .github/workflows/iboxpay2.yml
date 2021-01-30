@@ -3,7 +3,7 @@ name: HAHA
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/10 0-15 * * *'
+     - cron: '*/20 0-15 * * *'
   watch:
     types: started
 jobs:
