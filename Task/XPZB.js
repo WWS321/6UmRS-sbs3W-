@@ -338,7 +338,7 @@ async function all() {
                 await withdraw(); //提现
             }
 
-            if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < 30) {
+            if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < 60) {
                 await liveslist(); //直播节目表
                 dd = liveIdcd * 35 - 34
                 console.log(`📍本次直播运行需要${dd}秒` + '\n')
