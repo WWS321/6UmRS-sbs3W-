@@ -6,7 +6,7 @@ name: BA2k^PVzflw
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 4,15 * * *'
+     - cron: '0 2,4,15 * * *'
  # watch:
  #   types: started
 jobs:
