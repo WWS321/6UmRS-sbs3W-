@@ -19,7 +19,7 @@ jobs:
         FL_flwspBODY: ${{ secrets.FL_flwspBODY2 }}	
         FL_flwqwBODY: ${{ secrets.FL_flwqwBODY2 }}        
         FL_CASH: ${{ secrets.FL_CASH }}
-        FL_FLWYDBODY: ${{ secrets.FL_FLWYDBODY2 }}
+        FL_flwydBODY: ${{ secrets.FL_FLWYDBODY2 }}
     steps:
       - name: Checkout
         run: |
