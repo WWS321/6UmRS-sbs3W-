@@ -25,6 +25,7 @@ jobs:
         SQ_shuqisqjlBODY: ${{ secrets.SQ_shuqisqjlBODY }}	
         SQ_shuqicjyURL: ${{ secrets.SQ_shuqicjyURL }}	
         SQ_shuqicjcsBODY: ${{ secrets.SQ_shuqicjcsBODY }}	
+        SQ_shuqicjBODY: ${{ secrets.SQ_shuqicjBODY }}	
         SQ_shuqijsspBODY: ${{ secrets.SQ_shuqijsspBODY }}	
         SQ_shuqijsydURL: ${{ secrets.SQ_shuqijsydURL }}	
         SQ_shuqijsydBODY: ${{ secrets.SQ_shuqijsydBODY }}	
