@@ -44,6 +44,14 @@ jobs:
         JDTQ_jdtqspwcfbBODY: ${{ secrets.JDTQ_jdtqspwcfbBODY }}
         JDTQ_jdtqcf1BODY: ${{ secrets.JDTQ_jdtqcf1BODY }}
         JDTQ_jdtqcf1fbBODY: ${{ secrets.JDTQ_jdtqcf1fbBODY }}
+        JDTQ_jdtqcf2BODY: ${{ secrets.JDTQ_jdtqcf2BODY }}
+        JDTQ_jdtqcf2fbBODY: ${{ secrets.JDTQ_jdtqcf2fbBODY }}
+        JDTQ_jdtqcf3BODY: ${{ secrets.JDTQ_jdtqcf3BODY }}
+        JDTQ_jdtqcf3fbBODY: ${{ secrets.JDTQ_jdtqcf3fbBODY }}
+        JDTQ_jdtqcf4BODY: ${{ secrets.JDTQ_jdtqcf4BODY }}
+        JDTQ_jdtqcf4fbBODY: ${{ secrets.JDTQ_jdtqcf4fbBODY }}
+        JDTQ_jdtqjcbBODY: ${{ secrets.JDTQ_jdtqjcbBODY }}
+        JDTQ_jdtqjclqBODY: ${{ secrets.JDTQ_jdtqjclqBODY }}
     steps:
       - name: Checkout
         run: |
