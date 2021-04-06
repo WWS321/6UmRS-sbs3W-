@@ -38,7 +38,6 @@ jobs:
       - name: '运行 【jdtqqqqq】'
         if: env.JDTQ_jdtquserBODY
         run: |
-          cd ~/bbb
           node Task/jdtq.js
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
