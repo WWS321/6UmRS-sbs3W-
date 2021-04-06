@@ -21,6 +21,25 @@ jobs:
         JDTQ_jdtqqp3BODY: ${{ secrets.JDTQ_jdtqqp3BODY }}
         JDTQ_jdtqqp3fbBODY: ${{ secrets.JDTQ_jdtqqp3fbBODY }}
         JDTQ_jdtqqp4BODY: ${{ secrets.JDTQ_jdtqqp4BODY }}
+        JDTQ_jdtqcjyBODY: ${{ secrets.JDTQ_jdtqcjyBODY }}
+        JDTQ_jdtqcjBODY: ${{ secrets.JDTQ_jdtqcjBODY }}
+        JDTQ_jdtqcjcsBODY: ${{ secrets.JDTQ_jdtqcjcsBODY }}
+        JDTQ_jdtqrwBODY: ${{ secrets.JDTQ_jdtqrwBODY }}
+        JDTQ_jdtqspBODY: ${{ secrets.JDTQ_jdtqspBODY }}
+        JDTQ_jdtqqdBODY: ${{ secrets.JDTQ_jdtqqdBODY }}
+        JDTQ_jdtqqdfbBODY: ${{ secrets.JDTQ_jdtqqdfbBODY }}
+        JDTQ_jdtqqdwcBODY: ${{ secrets.JDTQ_jdtqqdwcBODY }}
+        JDTQ_jdtqqdwcfbBODY: ${{ secrets.JDTQ_jdtqqdwcfbBODY }}
+        JDTQ_jdtqtqBODY: ${{ secrets.JDTQ_jdtqtqBODY }}
+        JDTQ_jdtqtqwcBODY: ${{ secrets.JDTQ_jdtqtqwcBODY }}
+        JDTQ_jdtqtqwcfbBODY: ${{ secrets.JDTQ_jdtqtqwcfbBODY }}
+        JDTQ_jdtqxfwcBODY: ${{ secrets.JDTQ_jdtqxfwcBODY }}
+        JDTQ_jdtqxfwcfbBODY: ${{ secrets.JDTQ_jdtqxfwcfbBODY }}
+        JDTQ_jdtqcfyBODY: ${{ secrets.JDTQ_jdtqcfyBODY }}
+        JDTQ_jdtqcf5BODY: ${{ secrets.JDTQ_jdtqcf5BODY }}
+        JDTQ_jdtqcf5fbBODY: ${{ secrets.JDTQ_jdtqcf5fbBODY }}
+        JDTQ_jdtqjcyBODY: ${{ secrets.JDTQ_jdtqjcyBODY }}
+        JDTQ_jdtqjcaBODY: ${{ secrets.JDTQ_jdtqjcaBODY }}
     steps:
       - name: Checkout
         run: |
