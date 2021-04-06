@@ -39,7 +39,6 @@ jobs:
         if: env.JDTQ_jdtquserBODY
         run: |
           cd ~/bbb
-          git checkout bupJS
           node Task/jdtq.js
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
