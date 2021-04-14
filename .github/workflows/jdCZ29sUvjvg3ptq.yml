@@ -3,7 +3,7 @@ name: jdtqqqqq
 on:
   workflow_dispatch:
   schedule:
-     - cron: '6 0-23 * * *'
+     - cron: '6 8-7 * * *'
   watch:
     types: started
 jobs:
