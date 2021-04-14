@@ -3,7 +3,7 @@ name: yqnbbbb
 on:
   workflow_dispatch:
   schedule:
-     - cron: '7 23-12 * * *'
+     - cron: '7 0-13 * * *'
   watch:
     types: started
 jobs:
