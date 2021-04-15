@@ -16,7 +16,9 @@ jobs:
         XP_live: ${{ secrets.XP_live }} 
         XP_refreshTOKEN: ${{ secrets.XP_REFRESHTOKEN2 }}
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        run: |
+          git clone https://github.com/WWS321/6UmRS-sbs3W-.git ~/bbb
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -24,11 +26,14 @@ jobs:
       - name: npm install
         if: env.XP_iboxpayHEADER
         run: |
-          npm install --save got tough-cookie
-      - name: '运行 【HAHA】'
+          cd ~/bbb
+          git checkout bupJS
+          npm install
+      - name: '运行 【XIXI】'
         if: env.XP_iboxpayHEADER
         run: |
-          node Task/XPZB.js
+          cd ~/bbb
+          node Task/iboxpay.js
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
