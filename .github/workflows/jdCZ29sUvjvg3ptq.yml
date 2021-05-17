@@ -64,7 +64,7 @@ jobs:
         if: env.JDTQ_jdtquserBODY
         run: |
           cd ~/bbb
-          git checkout bupJS
+          git checkout backups
           npm install
       - name: '运行 【jdtqqqqq】'
         if: env.JDTQ_jdtquserBODY
