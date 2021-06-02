@@ -25,7 +25,7 @@ jobs:
         if: env.QQ_QQreadURL
         run: |
           cd ~/bbb
-          git checkout bupJS
+          git checkout backups
           npm install
       - name: '运行 【Q5cVRd2pgUn2RE】'
         if: env.QQ_QQreadURL
