@@ -32,11 +32,7 @@ boxjs地址 ： https://raw.githubusercontent.com/xl2101200/-/main/tom.box.json
 
 const $ = new Env('青椒音乐');
 let DD = RT(5000, 8000)
-let headers = {
-
-"把抓到的headers放这里"
-
-,}
+let headers = process.env.QJYY_HEAHER
 
 !(async () => {
   if (typeof $request !== "undefined") {
