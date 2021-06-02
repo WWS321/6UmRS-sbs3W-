@@ -32,7 +32,18 @@ boxjs地址 ： https://raw.githubusercontent.com/xl2101200/-/main/tom.box.json
 
 const $ = new Env('青椒音乐');
 let DD = RT(5000, 8000)
-let headers = process.env.QJYY_HEAHER
+let headers = {
+"user-agent": "Mozilla/5.0 (Linux; Android 9; Sony-G8142 Build/47.2.A.10.107; AD-20/1.0.4;)",
+"app_version": "1.0.4",
+"channel": "AD-20",
+"smid": "DU-SdaovZdg4KcDekk4sX_iwgushK16fzf9d",
+"mac": "84-c7-ea-38-db-be",
+"androidid": "920ea15c092c471e",
+"token": "5188e471-c5bc-432d-92ff-3fd6e1673047",
+"Host": "music2-game.iscrv.com",
+"Connection": "Keep-Alive",
+"Accept-Encoding": "gzip"
+}
 
 !(async () => {
   if (typeof $request !== "undefined") {
