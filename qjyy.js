@@ -40,6 +40,7 @@ let headers = {
 "mac": "84-c7-ea-38-db-be",
 "androidid": "920ea15c092c471e",
 "token": "5188e471-c5bc-432d-92ff-3fd6e1673047",
+"sign": "EFBCF7D5C30068DE1B5F581C0DB31C6F",
 "Host": "music2-game.iscrv.com",
 "Connection": "Keep-Alive",
 "Accept-Encoding": "gzip"
