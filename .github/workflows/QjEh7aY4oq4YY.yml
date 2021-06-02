@@ -26,7 +26,7 @@ jobs:
         run: |
           cd ~/bbb
           git checkout bauptom
-          npm install got --save
+          npm install got tough-cookie --save
       - name: '运行 【qjyyyy】'
         if: env.QJYY_HEAHER
         run: |
