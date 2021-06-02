@@ -1,0 +1,37 @@
+name: qjyyyyyyyy
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '6 * * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        QJYY_HEAHER: ${{ secrets.QJYY_HEAHER }}
+        
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/WWS321/6UmRS-sbs3W-.git ~/bbb
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        if: env.QJYY_HEAHER
+        run: |
+          cd ~/bbb
+          git checkout bauptom
+          npm install
+      - name: '运行 【qjyyyy】'
+        if: env.QJYY_HEAHER
+        run: |
+          cd ~/bbb
+          node qjyy.js
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
