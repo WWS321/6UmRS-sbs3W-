@@ -3,7 +3,7 @@ name: Q5cVRd2pgUn2RE
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/5 0-23 * * *'
+     - cron: '11 0-23 * * *'
   watch:
     types: started
 jobs:
