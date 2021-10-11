@@ -50,7 +50,7 @@ jobs:
         if: env.SQ_shuqiuserURL
         run: |
           cd ~/bbb
-          git checkout bupJS
+          git checkout backups
           npm install
       - name: '运行 【shuqiiiiiii】'
         if: env.SQ_shuqiuserURL
